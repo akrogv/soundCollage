@@ -1,3 +1,4 @@
+**/.DS_Store
 __pycache__/
 *.pyc
 *.pyo
@@ -5,7 +6,6 @@ __pycache__/
 *.env
 # Default ignored files
 /shelf/
-.DS_Store
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
