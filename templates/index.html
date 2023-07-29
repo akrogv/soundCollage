@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 </head>
 <body>
@@ -11,7 +12,7 @@
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
         <h1>soundCollage</h1>
     </header>
-    <p>Create and share a wonderful collage based on your top listened Spotify tracks.</p>
+    <p>Create and share a cool collage based on your top listened Spotify tracks.</p>
     <a href="{{ url_for('login') }}">Login with Spotify</a>
 </body>
 </html>

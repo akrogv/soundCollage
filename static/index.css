@@ -1,4 +1,4 @@
-/* styles.css */
+/* index.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #fff;
@@ -35,4 +35,27 @@ a:hover {
     width: 100px; /* Adjust the width and height to fit your logo */
     height: auto;
     margin-right: 10px;
+}
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 25px; /* Reduce font size for smaller screens */
+        margin-top: 30px;
+    }
+
+    p {
+        font-size: 14px; /* Reduce font size for smaller screens */
+        margin-left: 10px;
+         margin-right: 10px;
+    }
+
+    a {
+        margin-top: 70px; /* Adjust margin for smaller screens */
+        padding: 4px 10px; /* Adjust padding for smaller screens */
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 135px; /* Adjust logo size for smaller screens */
+        margin-top: 65px;
+    }
 }

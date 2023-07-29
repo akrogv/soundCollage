@@ -1,11 +1,10 @@
 from flask import Flask, render_template, redirect, url_for, session, request
 from flask_oauthlib.client import OAuth
 import requests
-import json
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
+from PIL import Image
+from io import BytesIO
+import base64
+
 
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
@@ -80,13 +79,11 @@ def collage():
             if len(album_images_set)>= 25:
                 break
         album_images = list(album_images_set)
-
         # Render the 'collage.html' template with the album_images data
         return render_template('collage.html', album_images=album_images)
 
     else:
         print(f"Failed to fetch top tracks data. Status code: {response.status_code}")
-        print(response.text)  # Print the response data for debugging purposes
         return render_template('error.html', message='Failed to fetch top tracks data')
 
 
@@ -102,5 +99,3 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()

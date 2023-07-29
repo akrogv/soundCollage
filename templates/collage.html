@@ -3,6 +3,8 @@
 <head>
     <title>Collage</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='collage_styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -24,6 +26,7 @@
             {% endfor %}
         </div>
 
+        </div>
     </div>
 
     <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
@@ -40,6 +43,7 @@
         document.getElementById('long_Term').addEventListener('click', function() {
             window.location.href = '/collage?time_range=long_term';
         });
+
     </script>
 </body>
 </html>
