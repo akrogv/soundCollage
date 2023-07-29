@@ -1,0 +1,94 @@
+/* Reset styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    background-color: #fff;
+    padding: 10px;
+    color: #333333;
+}
+
+header h1 {
+    font-size: 24px;
+    color:#333
+}
+.logo-small {
+    width: 40px; /* Adjust the width and height to fit your small logo */
+    height: auto;
+    margin-right: 5px;
+}
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+}
+
+/* Collage styles */
+.collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+.collage img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 0;
+    border: none;
+}
+
+/* Buttons styles */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #00cc66;
+}
+
+/* Logout button styles */
+.logout-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100px;
+}
+
+.logout-btn:hover {
+    background-color: #00cc66;
+}

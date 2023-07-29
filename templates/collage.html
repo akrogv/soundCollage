@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='collage_styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-small">
+        <h1>soundCollage</h1>
+    </header>
+
+    <!-- Create a collage-like layout for the album images -->
+    <div class="container">
+        <div class="buttons">
+            <button id="short_Term">Short Term</button>
+            <button id="mid_Term">Medium Term</button>
+            <button id="long_Term">Long Term</button>
+        </div>
+        <div class="collage">
+            {% for image in album_images %}
+                <img src="{{ image }}" alt="Album Image">
+            {% endfor %}
+        </div>
+    </div>
+
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+
+    <script>
+        document.getElementById('short_Term').addEventListener('click', function() {
+            window.location.href = '/collage?time_range=short_term';
+        });
+
+        document.getElementById('mid_Term').addEventListener('click', function() {
+            window.location.href = '/collage?time_range=medium_term';
+        });
+
+        document.getElementById('long_Term').addEventListener('click', function() {
+            window.location.href = '/collage?time_range=long_term';
+        });
+    </script>
+</body>
+</html>
