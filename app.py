@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, session, request
 from flask_oauthlib.client import OAuth
-from helpers import *
 import requests
 import json
 import pandas as pd
@@ -31,9 +30,8 @@ def home():
     # Check if the user is logged in (i.e., has an access token)
     access_token = session.get('spotify_token')
 
-    # Redirect to the profile page if the user is logged in
     if access_token:
-        return redirect(url_for('profile'))
+        return redirect(url_for('collage'))
 
     # If the user is not logged in, show the login page
     return render_template('index.html', user_data='')
@@ -57,43 +55,6 @@ def spotify_authorized():
 
     # Redirect to the home page or any other route
     return redirect(url_for('collage'))
-
-@app.route('/profile')
-def profile():
-    access_token = session.get('spotify_token')
-    if not access_token:
-        return redirect(url_for('login'))
-        # Fetch the user's profile data from the Spotify API
-    headers = {'Authorization': f'Bearer {access_token}'}
-    response = requests.get('https://api.spotify.com/v1/me', headers=headers)
-    # Check if the API request was successful
-    if response.status_code == 200:
-        user_data = response.json()
-        # Extract the relevant user data (e.g., display name, email, profile picture, etc.)
-        display_name = user_data.get('display_name', 'User')
-        email = user_data.get('email', '')
-        profile_picture = None
-        images = user_data.get('images',[])
-        if images:
-            profile_picture = images[0].get('url')
-        #fetch listening data
-        timerange = request.args.get('time_range','short_term')
-        top_tracks_url = 'https://api.spotify.com/v1/me/top/tracks'
-        response = requests.get(top_tracks_url,headers=headers,params={'limit':3,'time_range':'short_term'})
-        print(response)
-        if response.ok and response.text:
-            try:
-                top_tracks_data = response.json()
-                top_tracks = top_tracks_data['items']
-        # Render the 'profile.html' template with the user data
-                return render_template('profile.html', display_name=display_name,top_tracks=top_tracks ,email=email)#,profile_picture=profile_picture
-            except json.JSONDecoder as e:
-                print(f"JSONDecodeeRROR: {e}")
-        else:
-            print(f"failed to fetch data.{response.status_code}")
-    # If the API request fails or the access token is invalid, redirect to the login page
-    return redirect(url_for('login'))
-
 
 @app.route('/collage')
 def collage():
