@@ -13,7 +13,7 @@
         <h1>soundCollage</h1>
     </header>
 
-    <!-- Create a collage-like layout for the album images -->
+
     <div class="container">
         <div class="buttons">
             <button id="short_Term">Short Term</button>
@@ -30,20 +30,8 @@
     </div>
 
     <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    <script src="{{ url_for('static', filename='collage_script.js') }}"></script>
 
-    <script>
-        document.getElementById('short_Term').addEventListener('click', function() {
-            window.location.href = '/collage?time_range=short_term';
-        });
 
-        document.getElementById('mid_Term').addEventListener('click', function() {
-            window.location.href = '/collage?time_range=medium_term';
-        });
-
-        document.getElementById('long_Term').addEventListener('click', function() {
-            window.location.href = '/collage?time_range=long_term';
-        });
-
-    </script>
 </body>
 </html>

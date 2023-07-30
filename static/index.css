@@ -36,7 +36,7 @@ a:hover {
     height: auto;
     margin-right: 10px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
     h1 {
         font-size: 25px; /* Reduce font size for smaller screens */
         margin-top: 30px;
