@@ -21,12 +21,12 @@ spotify = oauth.remote_app(
     access_token_method='POST',
     access_token_url='https://accounts.spotify.com/api/token',
     authorize_url='https://accounts.spotify.com/authorize',
-    consumer_key='96626927888642e5bedd41bf75518c59',  # Your client_id goes here
+    consumer_key='96626927888642e5bedd41bf75518c59',
 )
 
 @app.route('/')
 def home():
-    # Check if the user is logged in (i.e., has an access token)
+    # Check if the user has access token
     access_token = session.get('spotify_token')
 
     if access_token:
@@ -52,7 +52,7 @@ def spotify_authorized():
     session['spotify_token'] = response['access_token']
     session['spotify_refresh_token'] = response.get('refresh_token')
 
-    # Redirect to the home page or any other route
+    # Redirect to collage
     return redirect(url_for('collage'))
 
 @app.route('/collage')
@@ -89,12 +89,11 @@ def collage():
 
 @app.route('/logout')
 def logout():
-    # Clear the session data, including access token and refresh token
+    # Clear session data
     session.pop('spotify_token', None)
     session.pop('spotify_refresh_token', None)
     session.clear()
 
-    # Redirect the user to the home page (or any other desired page)
     return redirect(url_for('home'))
 
 

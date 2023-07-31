@@ -20,7 +20,7 @@
             <button id="long_Term">Long Term</button>
             <button id="dwnld-btn">Download </button>
         </div>
-        <div class="collage" id = "collage">
+        <div class="collage" id = "collageContainer">
             {% for image in album_images %}
                 <img src="{{ image }}" alt="Album Image">
             {% endfor %}
@@ -30,7 +30,8 @@
     </div>
 
     <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
     <script src="{{ url_for('static', filename='collage_script.js') }}"></script>
 </body>
 </html>

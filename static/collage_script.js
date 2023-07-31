@@ -12,42 +12,47 @@ document.getElementById('long_Term').addEventListener('click', function() {
 });
 
 document.getElementById('dwnld-btn').addEventListener('click', function() {
-    convertCollageToImage();
+    drawCollage2();
 });
 
+function drawCollage2() {
+    var images = document.querySelectorAll('.collage img'); //nodelist of img
+    var element = document.getElementById('collageContainer');//collage class
+    var ctx = canvas.getContext('2d');
+    images.forEach(function (image) {
+        element.appendChild(image);
+        console.log(element);
+    });
+    html2canvas(element).then(function (canvas) {
+        canvas.toBlob(function (blob) {
+            window.saveAs(blob, "here's the collage.png");
+        });
+    });
+};
 
-//convert collage class into image
-function convertCollageToImage() {
-    var collageDiv = document.getElementById('collage');
-    var collageCanvas = document.createElement('canvas');
-    var context = collageCanvas.getContext('2d');
+// Function to convert multiple images into a single one:
+function drawCollage() {
+    var collageContainer = document.getElementById('collageContainer');
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+    canvas.width = collageContainer.offsetWidth;
+    canvas.height = collageContainer.offsetHeight;
 
-    // Set the canvas size to match the collage container size
-    collageCanvas.width = collageDiv.offsetWidth;
-    collageCanvas.height = collageDiv.offsetHeight;
-
-    // Draw the entire collage onto the canvas
-    var images = collageDiv.getElementsByTagName('img');
+    var images = collageContainer.querySelectorAll("img");
     var x = 0;
     var y = 0;
     var maxRowHeight = 0;
 
-    for (var i = 0; i < images.length; i++) {
-        var image = images[i];
+    images.forEach(function (image) {
         context.drawImage(image, x, y, image.width, image.height);
         x += image.width;
         maxRowHeight = Math.max(maxRowHeight, image.height);
 
-        if (x + image.width > collageCanvas.width) {
+        if (x + image.width > canvas.width) {
             x = 0;
             y += maxRowHeight;
             maxRowHeight = 0;
         }
-    }
-
-    // Open the collage image in a new window
-    window.open(collageCanvas.toDataURL());
-}
-
-
-
+    });
+    collageContainer.appendChild(canvas);
+};

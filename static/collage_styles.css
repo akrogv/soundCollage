@@ -39,14 +39,16 @@ header h1 {
 /* Collage styles */
 .collage {
     display: flex;
+    width:100%;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 0;
 }
 
 .collage img {
-    width: 150px;
-    height: 150px;
+    align-items: center;
+    width: 20%;
+    height: 20%;
     object-fit: cover;
     margin: 0;
     border: none;
