@@ -112,7 +112,6 @@ rfc3986-validator @ file:///home/conda/feedstock_root/build_artifacts/rfc3986-va
 rpds-py @ file:///Users/runner/miniforge3/conda-bld/rpds-py_1689705285997/work
 seaborn @ file:///home/conda/feedstock_root/build_artifacts/seaborn-split_1672497695270/work
 Send2Trash @ file:///Users/runner/miniforge3/conda-bld/send2trash_1682601407921/work
-six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
 sniffio @ file:///home/conda/feedstock_root/build_artifacts/sniffio_1662051266223/work
 soupsieve @ file:///home/conda/feedstock_root/build_artifacts/soupsieve_1658207591808/work
 stack-data @ file:///home/conda/feedstock_root/build_artifacts/stack_data_1669632077133/work
