@@ -18,14 +18,11 @@ header {
 }
 
 header h1 {
-    font-size: 24px;
+    font-size: 20px;
     color:#333
 }
-.logo-small {
-    width: 30px; /* Adjust the width and height to fit your small logo */
-    height: auto;
-    margin-right: 5px;
-}
+
+
 /* Container styles */
 .container {
     max-width: 800px;
@@ -59,40 +56,45 @@ header h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    font-size: 12px
 }
 
 .buttons button {
     margin: 0 5px;
     padding: 5px 15px;
-    background-color: #333333;
-    color: #fff;
+    background-color: #fff;
+    color: #333333;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
 }
 
 .buttons button:hover {
-    background-color: #00cc66;
+    background-color: #fff;
+    color:#00cc66;
 }
 
-/* Logout button styles */
 .logout-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 5px 15px;
-    background-color: #333333;
-    color: #fff;
+    position:absolute;
+    top:10px;
+    right:20px;
+    padding: 2px 0px;
+    background-color: #fff;
+    color: #333333;
     text-decoration: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
     width: 100px;
+    font-size: 12px
 }
 
 .logout-btn:hover {
-    background-color: #00cc66;
+    background-color: #fff;
+    color:#00cc66;
 }
 
 
@@ -108,19 +110,21 @@ header h1 {
         flex-direction: column;
         align-items: center;
     }
+
+
     header{
         display:flex;
         margin-bottom: 0;
     }
 
     h1 {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     header h1 {
         flex-basis: 0;
         flex-grow: 1;
-        font-size: 14px;
+        font-size: 12px;
         margin: 0;
     }
 
@@ -128,10 +132,6 @@ header h1 {
         margin: 0;
     }
 
-    a {
-        margin-top: 12px;
-        padding: 8px 15px;
-    }
 
     .logo-small {
         width: 20px;
@@ -146,18 +146,13 @@ header h1 {
         border: none;
     }
 
-    .buttons {
-        margin-right: 5px;
-        margin-left: 5px;
-        align-items: center;
-    }
 
     .buttons button {
         font-size: 10px;
         margin: 3px;
         padding: 3px 10px;
-        background-color: #333333;
-        color: #fff;
+        background-color: #fff;
+        color: #333333;
         border: none;
         border-radius: 3px;
         cursor: pointer;
@@ -165,10 +160,8 @@ header h1 {
     }
 
     .logout-btn {
-        font-size:12px;
-        padding: 4px 2px;
-        width: 100px;
+        position:absolute;
+        font-size:10px;
         border-radius: 3px;
-        margin-top: 20px;
     }
 }

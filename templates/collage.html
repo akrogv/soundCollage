@@ -8,17 +8,17 @@
 <body>
     <!-- Header -->
     <header>
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-small">
         <h1>soundCollage</h1>
+        <a href="{{ url_for('logout') }}" class="logout-btn">logout</a>
     </header>
 
 
     <div class="container">
         <div class="buttons">
-            <button id="short_Term">Short Term</button>
-            <button id="mid_Term">Medium Term</button>
-            <button id="long_Term">Long Term</button>
-            <button id="dwnld-btn">Download </button>
+            <button id="short_Term">recently</button>
+            <button id="mid_Term">a bit back</button>
+            <button id="long_Term">ancient</button>
+
         </div>
         <div class="collage" id = "collageContainer">
             {% for image in album_images %}
@@ -29,9 +29,7 @@
         </div>
     </div>
 
-    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+
     <script src="{{ url_for('static', filename='collage_script.js') }}"></script>
 </body>
 </html>
