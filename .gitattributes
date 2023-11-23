@@ -1,1 +1,1 @@
-*.py filter=strip_secrets
+*.py filter=strip_secret_key

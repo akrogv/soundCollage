@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, redirect, url_for, session, request
 from flask_oauthlib.client import OAuth
 import requests
@@ -22,6 +24,7 @@ spotify = oauth.remote_app(
     access_token_url='https://accounts.spotify.com/api/token',
     authorize_url='https://accounts.spotify.com/authorize',
     consumer_key='96626927888642e5bedd41bf75518c59',
+    consumer_secret=os.environ.get('consumer_secret'),
 )
 
 @app.route('/')
