@@ -24,7 +24,7 @@ spotify = oauth.remote_app(
     access_token_url='https://accounts.spotify.com/api/token',
     authorize_url='https://accounts.spotify.com/authorize',
     consumer_key='96626927888642e5bedd41bf75518c59',
-    consumer_secret=os.environ.get('consumer_secret'),
+    consumer_secret=os.getenv('consumer_secret'),
 )
 
 @app.route('/')
