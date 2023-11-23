@@ -110,7 +110,6 @@ requests-oauthlib @ file:///home/conda/feedstock_root/build_artifacts/requests-o
 rfc3339-validator @ file:///home/conda/feedstock_root/build_artifacts/rfc3339-validator_1638811747357/work
 rfc3986-validator @ file:///home/conda/feedstock_root/build_artifacts/rfc3986-validator_1598024191506/work
 rpds-py @ file:///Users/runner/miniforge3/conda-bld/rpds-py_1689705285997/work
-macosx_11_0_arm64.whl#sha256=96907c0df8a8b6c557093438ba275c5f69f863fb02dc1d67419ddf6cc461e850
 seaborn @ file:///home/conda/feedstock_root/build_artifacts/seaborn-split_1672497695270/work
 Send2Trash @ file:///Users/runner/miniforge3/conda-bld/send2trash_1682601407921/work
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
