@@ -1,4 +1,3 @@
-anyio @ file:///home/conda/feedstock_root/build_artifacts/anyio_1688651106312/work/dist
 appnope @ file:///home/conda/feedstock_root/build_artifacts/appnope_1649077682618/work
 argon2-cffi @ file:///home/conda/feedstock_root/build_artifacts/argon2-cffi_1640817743617/work
 argon2-cffi-bindings @ file:///Users/runner/miniforge3/conda-bld/argon2-cffi-bindings_1666850755229/work
